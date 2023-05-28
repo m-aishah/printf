@@ -19,7 +19,7 @@ typedef struct formatter
 } formatter1;
 
 int _printf(const char *format, ...);
-void (*convert(const char *))(va_list list);
+void (*convert(char *))(va_list list);
 void print_c(va_list list);
 void print_s(va_list list);
 void print_d(va_list list);
