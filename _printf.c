@@ -9,27 +9,27 @@
 
 int _printf(const char *format, ...)
 {
-	int i, rvalue = 0;
 	va_list args;
+	int i, ret = 0;
 
 	va_start(args, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; *(format + i); i++)
 	{
-		if (format[i] == '%')
+		if (*(format + i) == '%')
 		{
 			i++;
 
-			if (format[i] != '%')
+			if (*(format + i) != '%')
 			{
 				convert(format + i)(args);
 				continue;
 			}
 		}
 
-		write(1, format + i, 1);
-		rvalue++;
+		write(1, (format + i), 1);
+		ret++;
 	}
 
-	return (rvalue);
+	return (ret);
 }
