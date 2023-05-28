@@ -6,6 +6,7 @@
  * Return: the number of characters printed
  *		(excluding the null byte used to end output to strings
  */
+
 int _printf(const char *format, ...)
 {
 	int i;
@@ -15,7 +16,7 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format[i] == '%s)
+		if (format[i] == '%')
 		{
 			i++;
 			convert(format + i)(args);
