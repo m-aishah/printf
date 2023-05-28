@@ -13,5 +13,5 @@ void print_s(va_list list)
 	s = va_arg(list, char *);
 
 	for (index = 0; s[index]; index++)
-		write(1, s, 1);
+		write(1, (s + index), 1);
 }

@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i;
+	int i, rvalue = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -19,13 +19,17 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			convert(format + i)(args);
+
+			if (format[i] != '%')
+			{
+				convert(format + i)(args);
+				continue;
+			}
 		}
-		else
-		{
-			write(1, format + i, 1);
-		}
+
+		write(1, format + i, 1);
+		rvalue++;
 	}
 
-	return (i);
+	return (rvalue);
 }

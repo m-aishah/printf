@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void (*convert(char *symbol))(va_list list)
+void (*convert(const char *symbol))(va_list list)
 {
 	formatter1 func[] = {
 		{"c", print_c},
