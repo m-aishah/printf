@@ -1,5 +1,7 @@
 # Custom Printf Project
 
+![printf_meme](./printf_meme.jpg)
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
